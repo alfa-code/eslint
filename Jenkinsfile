@@ -40,7 +40,7 @@ pipeline {
           post{
                 success {
                     script{
-                        sh 'Update version was success';
+                        echo 'Update version was success';
                     }
                 }
                 failure {
@@ -50,7 +50,7 @@ pipeline {
                 }
                 aborted {
                     script{
-                        sh 'Update version was aborted';
+                        echo 'Update version was aborted';
                     }
                 }
                 unstable {
@@ -77,7 +77,7 @@ pipeline {
             post{
                 success {
                     script{
-                        sh 'Build was success';
+                        echo 'Build was success';
                     }
                 }
                 failure {
@@ -87,7 +87,7 @@ pipeline {
                 }
                 aborted {
                     script{
-                        sh 'Build was aborted';
+                        echo 'Build was aborted';
                     }
                 }
                 unstable {
@@ -115,7 +115,7 @@ pipeline {
             post{
                 success {
                     script{
-                        sh 'Publish was success';
+                        echo 'Publish was success';
                     }
                 }
                 failure {
@@ -125,7 +125,7 @@ pipeline {
                 }
                 aborted {
                     script{
-                        sh 'Publish was aborted';
+                        echo 'Publish was aborted';
                     }
                 }
                 unstable {
