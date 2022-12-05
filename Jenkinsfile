@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/home/jenkins/yandex-cloud/bin:$PATH"
+        PATH = "/home/jenkins/yandex-cloud/bin:$PATH";
+        GITHUB_KEY = credentials('c86f6b66-20ca-46f6-b923-7997a9b455eb');
     }
 
     stages {
@@ -22,6 +23,11 @@ pipeline {
 
                 echo "Проверяем содержимое папки";
                 sh 'ls -a';
+
+                echo "------------------------------";
+
+                echo 'Проверяем наличие значения в переменной GITHUB_KEY';
+                echo '${GITHUB_KEY}';
 
                 echo "------------------------------";
             }
@@ -62,7 +68,7 @@ pipeline {
                     sh 'ls -a';
 
                     echo "Lib Publishing..."
-                    withNPM(npmrcConfig:'9680ce5e-6e04-4278-96f4-7b3fa1b68099') {
+                    withNPM(npmrcConfig: GITHUB_KEY) {
                         echo "Start Lib Publishing..."
                         sh 'npm publish --access public';
                         echo "End Lib Publishing..."
