@@ -1,4 +1,4 @@
-mkdir 'dist';
+mkdi1r 'dist';
 cp 'index.js' './dist/index.js';
 cp 'LICENSE' './dist/LICENSE';
 cp 'README.md' './dist/README.md';
