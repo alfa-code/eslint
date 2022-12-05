@@ -39,6 +39,7 @@ pipeline {
           }
           post{
                 success {
+                    sh 'Update version was success';
                 }
                 failure {
                     script{
@@ -48,6 +49,7 @@ pipeline {
                     }
                 }
                 aborted {
+                    sh 'Update version was aborted';
                 }
                 unstable {
                     script{
@@ -74,6 +76,7 @@ pipeline {
 
             post{
                 success {
+                    sh 'Build was success';
                 }
                 failure {
                     script{
@@ -81,6 +84,7 @@ pipeline {
                     }
                 }
                 aborted {
+                    sh 'Build was aborted';
                 }
                 unstable {
                     script{
