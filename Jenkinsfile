@@ -49,7 +49,7 @@ pipeline {
 
         stage("Commit Changes") {
           steps {
-            sh 'git push';
+            sh 'git push origin HEAD:main';
             sh 'git tag $(npm run get:version --silent)';
             sh 'git push --tags';
           }

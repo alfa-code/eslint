@@ -7,6 +7,7 @@
   "author": "Hydrock <hydrock74@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "sh build.sh"
+    "build": "sh build.sh",
+    "get-package-version": "node -p \"process.env.npm_package_version\""
   }
 }
