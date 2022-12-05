@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PATH = "/home/jenkins/yandex-cloud/bin:$PATH"
-        // GITHUB_KEY = credentials('c86f6b66-20ca-46f6-b923-7997a9b455eb')
+        GITHUB_KEY = credentials('9334e790-75a8-441f-bb4a-63babb766f1d')
     }
 
     stages {
