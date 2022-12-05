@@ -29,8 +29,15 @@ pipeline {
 
         stage('Build') {
             steps {
+                echo "Проверяем содержимое папки до сборки";
+                sh 'ls -la';
+
                 echo "Сборка";
                 sh 'yarn build';
+
+                echo "Проверяем содержимое папки после сборки";
+                sh 'ls -la';
+                sh 'ls -la dist';
             }
         }
 
