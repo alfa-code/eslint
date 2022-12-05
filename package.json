@@ -1,0 +1,12 @@
+{
+  "name": "@alfa-code/eslint",
+  "version": "1.0.0",
+  "description": "Eslint configurations for Alfa-Code projects",
+  "main": "index.js",
+  "repository": "git@github.com:alfa-code/eslint.git",
+  "author": "Hydrock <hydrock74@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "sh build.sh"
+  }
+}
