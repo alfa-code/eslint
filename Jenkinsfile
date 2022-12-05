@@ -37,6 +37,26 @@ pipeline {
           steps {
             sh 'npm version patch';
           }
+          post{
+                success {
+                }
+                failure {
+                    script{
+                        sh "exit 1"
+                        //or
+                        // error "Failed, exiting now..."
+                    }
+                }
+                aborted {
+                }
+                unstable {
+                    script{
+                           sh "exit 1"
+                          //or
+                          // error "Unstable, exiting now..."                    
+                     }
+                }
+            }
         }
 
         stage('Build') {
@@ -51,14 +71,23 @@ pipeline {
                 sh 'ls -la';
                 sh 'ls -la dist';
             }
-        }
 
-        stage("Commit Changes") {
-          steps {
-            sh 'git push origin HEAD:main';
-            sh 'git tag $(npm run get:version --silent)';
-            sh 'git push --tags';
-          }
+            post{
+                success {
+                }
+                failure {
+                    script{
+                        error "Failed, exiting now..."
+                    }
+                }
+                aborted {
+                }
+                unstable {
+                    script{
+                          error "Unstable, exiting now..."
+                     }
+                }
+            }
         }
 
         stage('Publish') {
@@ -75,6 +104,34 @@ pipeline {
                     }
                 }
             }
+            post{
+                success {
+                }
+                failure {
+                    script{
+                        sh "exit 1"
+                        //or
+                        // error "Failed, exiting now..."
+                    }
+                }
+                aborted {
+                }
+                unstable {
+                    script{
+                           sh "exit 1"
+                          //or
+                          // error "Unstable, exiting now..."                    
+                     }
+                }
+            }
+        }
+
+        stage("Commit Changes") {
+          steps {
+            sh 'git push origin HEAD:main';
+            sh 'git tag $(npm run get:version --silent)';
+            sh 'git push --tags';
+          }
         }
     }
 
