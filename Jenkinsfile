@@ -39,24 +39,24 @@ pipeline {
           }
           post{
                 success {
-                    sh 'Update version was success';
+                    script{
+                        sh 'Update version was success';
+                    }
                 }
                 failure {
                     script{
-                        sh "exit 1"
-                        //or
-                        // error "Failed, exiting now..."
+                        error "Failed, exiting now..."
                     }
                 }
                 aborted {
-                    sh 'Update version was aborted';
+                    script{
+                        sh 'Update version was aborted';
+                    }
                 }
                 unstable {
                     script{
-                           sh "exit 1"
-                          //or
-                          // error "Unstable, exiting now..."                    
-                     }
+                          error "Unstable, exiting now..."
+                    }
                 }
             }
         }
@@ -76,7 +76,9 @@ pipeline {
 
             post{
                 success {
-                    sh 'Build was success';
+                    script{
+                        sh 'Build was success';
+                    }
                 }
                 failure {
                     script{
@@ -84,7 +86,9 @@ pipeline {
                     }
                 }
                 aborted {
-                    sh 'Build was aborted';
+                    script{
+                        sh 'Build was aborted';
+                    }
                 }
                 unstable {
                     script{
@@ -110,7 +114,9 @@ pipeline {
             }
             post{
                 success {
-                    sh 'Publish was success';
+                    script{
+                        sh 'Publish was success';
+                    }
                 }
                 failure {
                     script{
@@ -118,7 +124,9 @@ pipeline {
                     }
                 }
                 aborted {
-                    sh 'Publish was aborted';
+                    script{
+                        sh 'Publish was aborted';
+                    }
                 }
                 unstable {
                     script{
