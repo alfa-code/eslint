@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/home/jenkins/yandex-cloud/bin:$PATH";
-        GITHUB_KEY = credentials('c86f6b66-20ca-46f6-b923-7997a9b455eb');
+        PATH = "/home/jenkins/yandex-cloud/bin:$PATH"
+        GITHUB_KEY = credentials('c86f6b66-20ca-46f6-b923-7997a9b455eb')
     }
 
     stages {
