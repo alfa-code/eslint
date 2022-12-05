@@ -109,19 +109,21 @@ pipeline {
                 }
             }
             post{
+                success {
+                    sh 'Publish was success';
+                }
                 failure {
                     script{
-                        sh "exit 1"
-                        //or
-                        // error "Failed, exiting now..."
+                        error "Failed, exiting now..."
                     }
+                }
+                aborted {
+                    sh 'Publish was aborted';
                 }
                 unstable {
                     script{
-                           sh "exit 1"
-                          //or
-                          // error "Unstable, exiting now..."                    
-                     }
+                        "Unstable, exiting now..."  
+                    }
                 }
             }
         }
