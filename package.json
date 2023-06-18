@@ -1,6 +1,6 @@
 {
   "name": "@alfa-code/eslint",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Eslint configurations for Alfa-Code projects",
   "main": "index.js",
   "repository": "git@github.com:alfa-code/eslint.git",
@@ -9,5 +9,8 @@
   "scripts": {
     "build": "sh build.sh",
     "get-package-version": "node -p \"process.env.npm_package_version\""
+  },
+  "dependencies": {
+    "eslint-plugin-destructuring": "^2.2.1"
   }
 }

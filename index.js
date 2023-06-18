@@ -1,5 +1,8 @@
 module.exports = {
     extends: [],
+    plugins: [
+        "destructuring"
+    ],
     rules: {
         // Next
         "@next/next/no-img-element": "off",
