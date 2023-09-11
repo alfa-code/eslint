@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/home/jenkins/yandex-cloud/bin:$PATH"
+        PATH = "/home/jenkins/yandex-cloud/bin:/home/jenkins/.nvm/versions/node/v18.16.1/bin:$PATH"
         GITHUB_KEY = credentials('9334e790-75a8-441f-bb4a-63babb766f1d')
     }
 
@@ -130,7 +130,7 @@ pipeline {
                 }
                 unstable {
                     script{
-                        "Unstable, exiting now..."  
+                        "Unstable, exiting now..."
                     }
                 }
             }
