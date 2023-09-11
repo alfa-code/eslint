@@ -8,7 +8,7 @@ module.exports = {
         "@next/next/no-img-element": "off",
         // JS
         "comma-dangle": [
-            "error",
+            "off",
             "never"
         ],
         // Индентация установлена в 4
@@ -77,6 +77,8 @@ module.exports = {
             {
                 "max-params": 0
             }
-        ]
+        ],
+        // Это правило называется "semi" и устанавливает его значение на ["error", "always"]. Значение "always" указывает, что ESLint должен выдавать ошибку, если точка с запятой не присутствует в коде.
+        "semi": ["error", "always"]
     },
 };
